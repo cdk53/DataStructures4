@@ -99,13 +99,16 @@ bool getDecision()
     while(true)
     {
         getline(std::cin, input);
-        if(input.at(0) == 'y' || input.at(0) == 'Y')
+        if(!input.empty())
         {
-            return true;
-        }
-        else if(input.at(0) == 'n' || input.at(0) == 'N')
-        {
-            return false;
+            if(input.at(0) == 'y' || input.at(0) == 'Y')
+            {
+                return true;
+            }
+            else if(input.at(0) == 'n' || input.at(0) == 'N')
+            {
+                return false;
+            }
         }
         std::cout << "Invalid input, please enter y or n: ";
     }

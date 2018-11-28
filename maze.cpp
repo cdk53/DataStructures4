@@ -19,11 +19,11 @@ maze::maze(int r, int c)
 bool maze::neighbors(int cell, int neigh) const
 {
     // Adjacent neighbors
-    if(neigh == cell + 1 && cell % col != 0)
-        return true;
-    else if(col == cell - neigh || col == neigh - cell)
+    if(cell == neigh + 1 && cell % col != 0)
         return true;
     else if(cell == neigh - 1 && cell % col != (col - 1))
+        return true;
+    else if(col == cell - neigh || col == neigh - cell)
         return true;
     else
         return false;

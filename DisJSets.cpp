@@ -32,10 +32,16 @@ void DisjSets::unionSets(int root1, int root2) {
 /**
  * Perform a find with path halving per exercise 8.16a from the book.
  */
+ // Find with path halving
 int DisjSets::find( int x )
 {
-	if( s[ x ] < 0 )
+	if(s[x] < 0)
 		return x;
+	else if(s[s[x]] < 0)
+		return s[x];
 	else
-		return s[x] = find(s[x]);
+	{
+		s[x] = s[s[x]];
+		return find(s[x]);
+	}
 }

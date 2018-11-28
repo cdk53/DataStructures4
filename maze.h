@@ -19,7 +19,7 @@ public:
    // get rid of cell's wall between cell and neighbor
    // Note: this method should be invoked twice from the driver
    // code to smashWall(a,b) and to smashWall(b,a)
-   void smashWall (int cell, int neigh);
+   void smashWall(int cell, int neigh);
 
    //print the maze
    void printMaze();
